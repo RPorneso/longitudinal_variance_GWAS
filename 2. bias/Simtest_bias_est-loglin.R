@@ -17,18 +17,6 @@ source("~/Desktop/AP Genetics/simtest.RIShet2.R")
 source("~/Desktop/AP Genetics/parsimtest.RISRIhet2.R")
 source("~/Desktop/AP Genetics/parsimtest.RIShet2.R")
 
-## Check which combinations of random intercept, slope are SEMI positive-definite using new versions nonlindisp2 and nonlindispersion2
-
-# w <- loglindisp2(N = 10000, t = 3, maf = 0.3, ranfx = c(0.9,0,0), betas = c(0,0,0), expdisp = -1) # works when you remove is.positive.definite (nonlindisp2)
-# w <- loglindisp2(N = 10000, t = 3, maf = 0.3, ranfx = c(0.9,0.2,0), betas = c(0,0,0), expdisp = -1) # 0.9 and 0.2 work # not working for loglin for some reason
-# w <- loglindispersion2(N = 10000, t = 3, maf = 0.3, ranfx = c(0.9,0,0.2,0,0,0), betas = c(0,0,0), expdisp = -1) # works when you remove is.positive.definite (nonlindispersion2)
-# 
-# mod <- lme(phe ~ time + snp, data = w, random = ~1|id, weights = varExp(form = ~snp), method = "ML", control = lmeControl(opt = "optim"))
-# mod <- tryCatch(lme(phe ~ time + snp, data = w, random = ~1|id, weights = varExp(form = ~snp), method = "ML", control = lmeControl(opt = "optim")), error = function (e) NULL)
-# results <- tryCatch(c(mod$coefficients$fixed[[1]], mod$coefficients$fixed[[2]], mod$coefficients$fixed[[3]], mod$sigma, as.numeric(VarCorr(mod)[3]), NA, mod$modelStruct$varStruct[[1]]), error = function (e) NULL)
-# results
-# summary(mod)
-
 # Simulate RIhete then RIShete, test against RIhete and return parameters of interest in lists of list - dgmAe & dgmBe (v2 with expdisp=0.1)
 # Simulate RIRIhete, test against RIhete and return parameters of interest in lists of list - dgmCe (v2 with expdisp=0.1)
 
@@ -42,7 +30,7 @@ save(dgmCe_v2, file = "~/Desktop/AP Genetics/dgmCe.Rda")
 
 ## Calculate mean and SE for every model fitted using each list-of-list above containing nsim sets of fixed and random effect estimates
 
-j <- 3 # no. of dgms that completed running / loaded without errors in any of the nsim iterations
+j <- 3 # no. of dgms that completed running
 models <- ls()[1:j]
 
 xbar <- lapply(1:j, function(i) Reduce('+', get(models[[i]])) / length(get(models[[i]])))
@@ -53,9 +41,6 @@ for (h in 1:j){
   temp <- lapply(1:length(get(models[[h]])), function(i) (get(models[[h]])[[i]] - xbar[[h]])^2)
   sqdiff[[h]] <- temp
 }
-
-# sigma <- lapply(1:j, function(i) sqrt(Reduce('+', sqdiff[[i]]) / length(sqdiff[[i]]))) # I SHOULD STOP HERE AND USE THIS ACCORDING TO TIM MORRIS AND CHANGE DENOM AS N-1
-# SE <- lapply(1:j, function(i) sigma[[i]] / sqrt(length(sqdiff[[i]])))
 
 SE <- lapply(1:j, function(i) sqrt(Reduce('+', sqdiff[[i]])) / length(sqdiff[[i]]))
 
