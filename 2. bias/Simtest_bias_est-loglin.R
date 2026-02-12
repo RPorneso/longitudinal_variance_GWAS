@@ -1,6 +1,4 @@
 rm(list = ls())
-# install.packages("lqmm")
-# install.packages("patchwork")
 library(dplyr)
 library(MASS)
 library(nlme)
