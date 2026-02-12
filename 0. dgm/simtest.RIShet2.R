@@ -19,8 +19,3 @@ simtest.RIShet2 <- function(N, t, maf, ranfx, betas, expdisp, nsim){ # CHANGED d
   simulated - results
   
 }
-
-# , "(", disps[[1]],",",disps[[2]], ")_" # ADD THIS BACK WHEN nonlindisp2 is used
-# disps[[1]]+1,disps[[2]]+1 # ADD THIS BACK WHEN nonlindisp2 is used
-# varIdent(value = c("1" = 1, "2" = 1), form = ~1|snp)  # ADD THIS BACK WHEN nonlindispersion2 IS USED AND REPLACE weights in mod line
-# + 1, mod$modelStruct$varStruct[[2]]  + 1 # ADD THIS BACK WHEN nonlindisp2 is used
