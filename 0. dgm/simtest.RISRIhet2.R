@@ -2,7 +2,7 @@ simtest.RISRIhet2 <- function(N, t, maf, ranfx, betas, expdisp, nsim){ # CHANGED
   
   # Generate and save data with file name stem dgm2e_ in local drive
   
-  dat <- loglindispersion2(N, t, maf, ranfx, betas, expdisp) # CHANGED FROM nonlindispersion2 AND disps to expdisp
+  dat <- loglindispersion2(N, t, maf, ranfx, betas, expdisp) 
   filename <- paste0("/Users/ralphp/trajsimdat/dgm2e_", N, t, "_(", ranfx[[1]],",",ranfx[[2]],",",ranfx[[3]],",",ranfx[[4]],",",ranfx[[5]],",",ranfx[[6]], ")_", "(", expdisp, ")_", nsim, ".csv") # ADDED e IN FILENAME                       
   fwrite(dat, filename)   
   
