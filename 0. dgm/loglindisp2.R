@@ -13,7 +13,7 @@ loglindisp2 <- function(N, t, maf, ranfx, betas, expdisp){
   Omega = matrix(c(ranfx[1]^2, ranfx[3], ranfx[3], ranfx[2]^2), 2, 2)
   print(Omega)
   raneffs <- mvrnorm(N, c(0,0), Omega)
-  sigma2_ij <- exp(0 + expdisp * snp) # changed per espen, but now cant fit full/RIShet model
+  sigma2_ij <- exp(0 + expdisp * snp) # changed per espen
   u0_j <- raneffs[id,1]
   u1_j <- raneffs[id,2]
   a <- (betas[1] + u0_j) + ((betas[2] + u1_j) * time) + (betas[3] * snp )
