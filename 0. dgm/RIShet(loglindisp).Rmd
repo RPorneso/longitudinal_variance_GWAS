@@ -1,0 +1,19 @@
+---
+title: "DGM_RI_FEloglinvar"
+output: html_document
+date: "2025-05-13"
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+$$Y_{ij} = (\beta_0  + \mu_{0j}) + (\beta_1 + \mu_{1j})\bf{time_{ij}} + \beta_2 SNP_j + \epsilon_{ij}$$
+$$\epsilon_{ij} \sim N(0, \sigma_{\epsilon ij}^2)$$
+$$\sigma_{\epsilon ij} = exp(\alpha + \tau \bf{SNP}_j)$$
+$$\begin{bmatrix} \mu_{0j} \\ \mu_{1j} \\ \end{bmatrix} \sim N(0, \Omega)$$
+$$\Omega = \begin{bmatrix} \sigma_{\mu0j}^2 & \\ \sigma_{\mu01j} & \sigma_{\mu1j}^2 \\ \end{bmatrix}$$
+
+NOTE: I removed the \^2 in $\sigma_{\epsilon ij}$ since the function
+stats::rnorm takes the standard deviation not variance in the data
+generating process. Similarly, nlme::lme returns the SD and not the
+variance in modmer objects.

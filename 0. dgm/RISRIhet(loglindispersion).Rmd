@@ -1,0 +1,9 @@
+---
+title: "RISRIhet(loglindispersion).Rmd"
+output: html_document
+date: "2025-05-16"
+---
+
+$$Y_{ij} = (\beta_0  + \mu_{0j}) + (\beta_1 + \mu_{1j})\bf{time_{ij}} + \beta_2 SNP_j + \epsilon_{ij}$$ $$\epsilon_{ij} \sim N(0, \sigma_{\epsilon ij}^2)$$ $$\sigma_{\epsilon ij} = exp (\alpha + \gamma + \tau \bf{SNP})$$ $$\begin{bmatrix} \mu_{0j} \\ \mu_{1j} \\ \gamma_j \end{bmatrix} \sim N(0, \Omega_{\mu \gamma})$$ $$\Omega_{\mu \gamma} = \begin{bmatrix} \sigma_{\mu0}^2 & & \\ \sigma_{\mu01} & \sigma_{\mu1}^2 & \\ \sigma_{\mu0 \gamma} & \sigma_{\mu1 \gamma} & \sigma_{\gamma}^2 \end{bmatrix}$$
+
+NOTE: I removed the \^2 in $\sigma_{\epsilon ij}$ since the function stats::rnorm takes the standard deviation not variance in the data generating process. Similarly, nlme::lme returns the SD and not the variance in modmer objects.
