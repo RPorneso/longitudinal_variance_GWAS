@@ -12,7 +12,7 @@ simrdatvE <- function(nsnp, N, t, TIME, Lambda, maf, bsnp){
   # TIME (vector) is the spacing of measurement, Lambda (matrix) is the inverse
   # of the covariance matrix defining the correlation among phenotypes across 
   # time points derived via cholesky decomposition, maf (double) is the 
-  # minor allele frequency and bsnp (double) is the snp effect size.
+  # minor allele frequency and bsnp (double) is the snp interaction effect size.
   
   snp = rbinom(N, 2, maf)
   E = matrix(rnorm(N*t, 0, 1), N, t) # this should be a matrix!!! CORRECTED THIS 1/20/25!                                                     
