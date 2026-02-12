@@ -1,6 +1,6 @@
 runtest <- function(dat, type){
   # updated simulation function, basis runsim2 
-  # reads files from directory and loads it as dat which is fed to runsim3
+  # reads files from directory and loads it as dat which is fed to runtest
   # @Params: dat is the directory and filename of df with snp, time, id & pheno
   # @Params: type refers to model to be fitted: disp1 is DGLM
   #          disp2 & 3 are varID & varExp, respectively.
