@@ -11,7 +11,7 @@ simrdatvq <- function(nsnp, N, t, TIME, Lambda, maf, bsnp){
   # TIME (vector) is the spacing of measurement, Lambda (matrix) is the inverse
   # of the covariance matrix defining the correlation of phenotypes across time
   # points derived via cholesky decomposition, maf (double) is the minor allele 
-  # frequency and bsnp (double) is the snp effect size.
+  # frequency and bsnp (double) is the snp interaction effect size.
   
   snp = rbinom(N, 2, maf)
   snp2 = rbinom(N, 2, maf)
