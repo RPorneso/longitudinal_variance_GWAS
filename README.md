@@ -5,10 +5,10 @@ Link to preprint: https://www.biorxiv.org/content/10.64898/2025.12.19.695443v1.f
 To re-create the simulations:
 
 1. Download all functions in 0. dgm and 1. power.
-1.1 Update directories where required.
-1.2 **Note** that the functions use parallel::mclapply suitable for Mac users to distribute jobs across multiple cores. For Windows users, you may simply change mclapply to lapply but the runtime will be longer depending on the number of iterations.
-3. Run the scripts for power and bias analysis. 
-4. To assess power and bias of our pipeline against TrajGWAS, your will need Julia. To install and run TrajGWAS, please refer to: https://github.com/OpenMendel/TrajGWAS.jl.
+   1.1 Update directories where required.
+   1.2 **Note** that the functions use parallel::mclapply suitable for Mac users to distribute jobs across multiple cores. For Windows users, you may simply change mclapply to lapply but the runtime will be longer depending on the number of iterations.
+2. Run the scripts for power and bias analysis. 
+3. To assess power and bias of our pipeline against TrajGWAS, your will need Julia. To install and run TrajGWAS, please refer to: https://github.com/OpenMendel/TrajGWAS.jl.
 
 OPTIONAL: To check how genetic interactions generate SNP variance effects, refer to Pilot.pdf under 0. dgm/interaction/. Codes are available in Pilot.Rmd.
 
