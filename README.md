@@ -1,4 +1,4 @@
-Simulation codes and analytic pipeline repository for the manuscript "Longitudinal modelling reveals widespread non-additive genetic effects underlying developmental plasticity".
+Simulation codes and analytic pipeline repository for the manuscript "**Longitudinal modelling reveals widespread non-additive genetic effects underlying developmental plasticity**".
 
 Link to preprint: https://www.biorxiv.org/content/10.64898/2025.12.19.695443v1.full.
 
@@ -19,10 +19,10 @@ A few notes on the analytic pipeline:
 
 To install and run TrajGWAS, please refer to: https://github.com/OpenMendel/TrajGWAS.jl.
 
-Citation
+**Citation**
 
 Porneso, R., Havdahl, A., Eilertsen, E., & Ystrom, E. (2025). Longitudinal modelling reveals widespread non-additive genetic effects underlying developmental plasticity. bioRxiv. https://doi.org/10.64898/2025.12.19.695443
 
-Acknowledgement 
+**Acknowledgement** 
 
 This work was funded by European Union’s (EU’s) Horizon Europe research and innovation program under the Marie Skłodowska-Curie grant agreement (no. ESSGN 101073237), the EU grant agreement (grant no. 101045526, project GeoGen), and by Sigma2 (grant no. NS9867S).
