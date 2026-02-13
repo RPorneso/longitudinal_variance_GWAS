@@ -8,7 +8,7 @@ To re-create the simulations:
 2. Run the scripts for power and bias analysis. 
 3. To assess power and bias of our pipeline against TrajGWAS needs Julia. To install and run TrajGWAS, please refer to: https://github.com/OpenMendel/TrajGWAS.jl.
 
-OPTIONAL: To check how genetic interactions generate SNP variance effects, refer to Pilot.pdf. Codes are available in Pilot.Rmd.
+OPTIONAL: To check how genetic interactions generate SNP variance effects, refer to 0.dgm/interaction/Pilot.pdf. Codes are available in Pilot.Rmd.
 
 A few notes on the analytic pipeline:
 
