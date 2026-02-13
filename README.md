@@ -7,7 +7,7 @@ To re-create the simulations:
 1. Download all functions in 0. dgm and 1. power folders. Update directories where required. **Note** that the functions use parallel::mclapply suitable for Mac users to distribute jobs across multiple cores. For Windows users, you may simply change mclapply to lapply but the runtime will be longer depending on the number of iterations.
 2. Run the scripts for power and bias analysis. 
 3. To check how genetic interactions generate SNP variance effects, refer to Pilot.pdf. Codes are available in Pilot.Rmd.
-4. To assess power and bias of our pipeline, run scripts in 1. power and 2. bias folders. You will need to install Julia to compare our pipeline against trajGWAS.
+4. To assess power and bias of our pipeline against TrajGWAS, will need to install Julia. To install and run TrajGWAS, please refer to: https://github.com/OpenMendel/TrajGWAS.jl.
 
 A few notes on the analytic pipeline:
 
@@ -17,8 +17,6 @@ A few notes on the analytic pipeline:
 4. Each output file contains 2000 SNPs. They need to be combined into 1 summary statistics file.
 5. Since we relied on LRT to assess SNP mean and variance effect, we repeated the analysis two times for significant SNPs where a) we added PCs in the residual, and for those that remain significant, b) isolated "variance" SNPs by comparing a mean only against a mean-and-variance model.
 6. Variance SNPs are sensitive to non-normality. It is recommended to transform non-normal phenotypes and rerun the pipeline to see if the detected SNP variance effects are scale-dependent.
-
-To install and run TrajGWAS, please refer to: https://github.com/OpenMendel/TrajGWAS.jl.
 
 **Citation**
 
